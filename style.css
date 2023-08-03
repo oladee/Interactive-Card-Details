@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
 }
 .purplish{
     height: 100%;
@@ -8,7 +9,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     padding-top: 30px;
-    padding-left: 80px;
+    padding-left: 100px;
 }
 #cardBack{
     background-image: url('/images/bg-card-back.png');
@@ -21,12 +22,21 @@
     position: fixed;
     top: 140px;
     left: 30px;
-    padding: 10px;
+    padding: 25px 0px 0px 25px;
 }
 #cardBack, .cardFront{
     height: 285px;
-    width: 310px;
+    width: 290px;
     background-size: 100%;
     background-repeat: no-repeat;
     border-radius: 10px;
+}
+.cardFront .cardLogo{
+    width: 60px;
+    display: block;
+}
+#numInput p{
+    color: white;
+    font-size: 20px;
+    
 }
