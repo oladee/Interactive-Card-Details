@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.purplish{
+    height: 100%;
+    background-image: url('./images/bg-main-mobile.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    padding-left: 90px;
+}
+#cardBack{
+    background-image: url('/images/bg-card-back.png');
+}
+#cardBack, #cardFront{
+    height: 245px;
+    width: 300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
