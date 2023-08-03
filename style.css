@@ -8,14 +8,25 @@
     background-size: 100%;
     background-repeat: no-repeat;
     padding-top: 30px;
-    padding-left: 90px;
+    padding-left: 80px;
 }
 #cardBack{
     background-image: url('/images/bg-card-back.png');
+    display: flex;
+    justify-content: center;
+    color: white;
 }
-#cardBack, #cardFront{
-    height: 245px;
-    width: 300px;
+.cardFront{
+    background-image: url('/images/bg-card-front.png');
+    position: fixed;
+    top: 140px;
+    left: 30px;
+    padding: 10px;
+}
+#cardBack, .cardFront{
+    height: 285px;
+    width: 310px;
     background-size: 100%;
     background-repeat: no-repeat;
+    border-radius: 10px;
 }
