@@ -15,7 +15,9 @@
 #cardBack{
     background-image: url('/images/bg-card-back.png');
     display: flex;
-    justify-content: center;
+}
+#cardBack p{
+    margin: 60px 0px 0px 210px;
 }
 .cardFront{
     background-image: url('/images/bg-card-front.png');
