@@ -45,6 +45,7 @@ main{
 #numInput p{
     padding-top: 25px;
     font-size: 20px;
+    word-spacing: 5px;
 }
 .otherDetails{
     padding-top: 10px;
@@ -85,22 +86,25 @@ input{
 .cvvDetails{
     margin: 0px 20px;
 }
+/* #cardNumber{
+   letter-spacing: 4px;
+} */
 @media (min-width:1024px){
     main{
         display: flex;
-        height: 100svh;
+        height: 100vh;
     }
     .purplish{
-        height: 100svh;
+        height: 100%;
         background-image: url('./images/bg-main-desktop.png');
-        background-size: 100% 100%;
+        background-size: cover;
     }
     .formSection{
-        height: 100vh;
+        height: 100%;
         width: 100%;
     }
     #cardBack, .cardFront{
-        height: 320px;
+        height: 290px;
         width: 300px;
     }
     .cardFront{
