@@ -26,5 +26,10 @@ number.addEventListener('input', () => {
     cardNumber.innerText = numArr.join('')
 })
 cvv.addEventListener('input', () => {
-    cardCvv.innerText = cvv.value
+    let cvvArr = cvv.value.split('')
+    for(var i = 0; cvvArr.length < 3; i++){
+            cvvArr.push(`0`)
+    }
+    cardCvv.innerText = cvvArr.join('')
+    
 })

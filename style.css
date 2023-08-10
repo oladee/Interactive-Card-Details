@@ -86,9 +86,13 @@ input{
 .cvvDetails{
     margin: 0px 20px;
 }
-/* #cardNumber{
-   letter-spacing: 4px;
-} */
+#cardNumber{
+   letter-spacing: 2px;
+}
+.confirm{
+    width: 100%;
+    
+}
 @media (min-width:1024px){
     main{
         display: flex;
