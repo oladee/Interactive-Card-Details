@@ -10,9 +10,8 @@ let cardYear = document.getElementById('cardYear');
 let cardCvv = document.getElementById('cardCvv');
 let form = document.getElementById('form');
 let btn = document.getElementById('btn')
-window.addEventListener('load',()=>{
-    btn.setAttribute('disabled','disabled')
-})
+
+// Name Validation function
 const nameValidation = () => {
     let Names = names.value
     let validName = Names.match(/[0-9]/g)
@@ -29,20 +28,31 @@ const nameValidation = () => {
         btn.removeAttribute('disabled')
     }
 }
-names.addEventListener('focusout', nameValidation)
+// End of name validation function
+
+// Window EVent listener acts as parent
+window.addEventListener('load',()=>{
+    btn.setAttribute('disabled','disabled')
+    names.addEventListener('input', nameValidation)
+})
+// End of windows event listener function
+
 year.addEventListener('input', () => {
     let yearArr = year.value.split('')
+    let error = ''
     for(var i = 0; yearArr.length < 2; i++){
             yearArr.push('0')
     }
     let validatedNumber = yearArr.join('')
     let valid = validatedNumber.match(/[a-z]/ig)
-    if(valid){
-        let error = 'Wrong Format'
+    if(valid || year.value.length < 2){
+        year.style.borderColor = 'red'
+        error = 'Wrong Format'
     }else{
+        year.style.borderColor = 'red'
+        cardYear.innerText = validatedNumber
         error = 'null'
     }
-    // if(year.value)
 })
 month.addEventListener('input', () => {
     let monthArr = month.value.split('')
