@@ -78,6 +78,9 @@ input{
 input:focus{
    border-color: hsl(278, 94%, 30%);
 }
+input:invalid{
+    border-color: hsl(0, 100%, 66%);
+}
 .Exp{
     width: 80px;
 }
@@ -104,8 +107,12 @@ input:focus{
 }
 .confirm:disabled{
     background-color: white;
+    color: hsl(278, 68%, 11%);
 }
-
+.errormsg{
+    color: hsl(0, 100%, 66%);
+    margin-bottom: 10px;
+}
 @media (min-width:1024px){
     main{
         display: flex;

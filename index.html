@@ -47,9 +47,9 @@
                 name="Name"
                 id="names"
                 placeholder="e.g. Jane Appleseed"
-                required
               />
             </div>
+            <p class="errormsg" id="errormsg1"></p>
           </div>
           <div>
             <label for="cardno">CARD NUMBER</label>
@@ -60,8 +60,11 @@
                 id="number"
                 maxlength="16"
                 placeholder="e.g. 1234 5678 9123 0000"
+                pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"
+                required
               />
             </div>
+            <p class="errormsg" id="errormsg2"></p>
           </div>
           <div class="extraDetails">
             <div>
@@ -75,7 +78,9 @@
                     maxlength="2"
                     class="Exp"
                     placeholder="MM"
+                    required
                   />
+                  <p class="errormsg" id="errormsg3"></p>
                 </div>
                 <div>
                   <input
@@ -85,7 +90,9 @@
                     class="Exp"
                     maxlength="2"
                     placeholder="YY"
+                    required
                   />
+                  <p class="errormsg" id="errormsg4"></p>
                 </div>
               </div>
             </div>
@@ -99,7 +106,9 @@
                   class="cvv"
                   maxlength="3"
                   placeholder="123"
+                  required
                 />
+                <p class="errormsg" id="errormsg5"></p>
               </div>
             </div>
           </div>

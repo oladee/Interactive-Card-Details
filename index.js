@@ -19,20 +19,21 @@ const nameValidation = () => {
     }else{
         error = null
     }
-    console.log(error)
+    if(names.value.length < 1){
+        cardName.innerText = 'Jane Appleseed'
+        error = "Please don't leave field empty!"
+    }
+    else{
+        cardName.innerText = names.value
+        error = null
+    }
     if(error){
         btn.setAttribute('disabled','disabled')
     }else{
         btn.removeAttribute('disabled')
     }
-    if(names.value.length < 1){
-        cardName.innerText = 'Jane Appleseed'
-    }
-    else{
-        cardName.innerText = names.value
-    }
 }
-names.addEventListener('input', nameValidation)
+names.addEventListener('focusout', nameValidation)
 year.addEventListener('input', () => {
     let yearArr = year.value.split('')
     for(var i = 0; yearArr.length < 2; i++){
@@ -40,6 +41,12 @@ year.addEventListener('input', () => {
     }
     let validatedNumber = yearArr.join('')
     let valid = validatedNumber.match(/[a-z]/ig)
+    if(valid){
+        let error = 'Wrong Format'
+    }else{
+        error = 'null'
+    }
+    // if(year.value)
 })
 month.addEventListener('input', () => {
     let monthArr = month.value.split('')
