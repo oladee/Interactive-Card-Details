@@ -102,6 +102,9 @@ input:focus{
     background-color: white;
     transition: 0.7s;
 }
+.confirm:disabled{
+    background-color: white;
+}
 
 @media (min-width:1024px){
     main{

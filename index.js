@@ -9,14 +9,21 @@ let cardMonth = document.getElementById('cardMonth');
 let cardYear = document.getElementById('cardYear');
 let cardCvv = document.getElementById('cardCvv');
 let form = document.getElementById('form');
+let btn = document.getElementById('btn')
 const nameValidation = () => {
     let Names = names.value
     let validName = Names.match(/[0-9]/g)
+    let error = ''
     if(validName){
-        let error = "Please Enter A Valid Name"
-        console.log(error)
+        error = "Please Enter A Valid Name"
     }else{
         error = null
+    }
+    console.log(error)
+    if(error){
+        btn.setAttribute('disabled','disabled')
+    }else{
+        btn.removeAttribute('disabled')
     }
     if(names.value.length < 1){
         cardName.innerText = 'Jane Appleseed'
@@ -54,5 +61,4 @@ cvv.addEventListener('input', () => {
             cvvArr.push(`0`)
     }
     cardCvv.innerText = cvvArr.join('')
-    
 })
