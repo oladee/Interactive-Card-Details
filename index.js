@@ -10,20 +10,16 @@ let cardYear = document.getElementById('cardYear');
 let cardCvv = document.getElementById('cardCvv');
 let form = document.getElementById('form');
 let btn = document.getElementById('btn')
+window.addEventListener('load',()=>{
+    btn.setAttribute('disabled','disabled')
+})
 const nameValidation = () => {
     let Names = names.value
     let validName = Names.match(/[0-9]/g)
     let error = ''
-    if(validName){
-        error = "Please Enter A Valid Name"
+    if(validName || names.value.length < 1){
+        error = "Wrong Format Please Enter A Valid Name"
     }else{
-        error = null
-    }
-    if(names.value.length < 1){
-        cardName.innerText = 'Jane Appleseed'
-        error = "Please don't leave field empty!"
-    }
-    else{
         cardName.innerText = names.value
         error = null
     }
