@@ -44,8 +44,7 @@ main{
 }
 #numInput p{
     padding-top: 25px;
-    font-size: 20px;
-    word-spacing: 5px;
+    font-size: 24px;
 }
 .otherDetails{
     padding-top: 10px;
@@ -89,9 +88,6 @@ input:invalid{
 }
 .dateEx,.extraDetails{
     display: flex;
-}
-#cardNumber{
-   letter-spacing: 2px;
 }
 .confirm{
     width: 100%;
@@ -142,6 +138,5 @@ input:invalid{
     }
     #numInput p{
         padding-top: 25px;
-        font-size: 25px;
     }
 }
