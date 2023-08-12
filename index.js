@@ -137,7 +137,10 @@ window.addEventListener('load',()=>{
     year.addEventListener('input', yearValidation)
     year.addEventListener('focusout', yearValidation)
     month.addEventListener('input', monthValidation)
+    month.addEventListener('focusout', monthValidation)
     number.addEventListener('input', numberValidation)
+    number.addEventListener('focusout', numberValidation)
     cvv.addEventListener('input',cvvValiadtion)
+    cvv.addEventListener('focusout',cvvValiadtion)
 })
 // End of windows event listener function
