@@ -79,7 +79,7 @@ const monthValidation = () => {
 }
 // Month Validation ends
 
-// CVV validation begins
+// CardNumber validation begins
 
 const numberValidation = () => {
     let numArr = number.value.split('')
@@ -104,21 +104,40 @@ const numberValidation = () => {
     cardNumber.innerText = validNumber
 }
 
-// CVV validation ends
+// CardNumber validation ends
+
+// Cvv Validation Begins
+
+const cvvValiadtion = () => {
+    let cvvArr = cvv.value.split('')
+    for(var i = 0; cvvArr.length < 3; i++){
+            cvvArr.push(`0`)
+    }
+    let validCvv = cvvArr.join('')
+    let valid = validCvv.match(/[a-z]/ig)
+    if(valid || cvv.value.length < 3){
+        cvv.style.borderColor = 'red'
+        let error = '*Wrong Format!'
+        btn.setAttribute('disabled','disabled')
+    }else{
+        cvv.style.borderColor = 'hsl(278, 94%, 30%)'
+        error = null
+        btn.removeAttribute('disabled')
+    }
+    cardCvv.innerText = validCvv
+}
+
+// Cvv Validation ends
 
 // Window EVent listener acts as parent
 window.addEventListener('load',()=>{
     btn.setAttribute('disabled','disabled')
     names.addEventListener('input', nameValidation)
+    names.addEventListener('focusout', nameValidation)
     year.addEventListener('input', yearValidation)
+    year.addEventListener('focusout', yearValidation)
     month.addEventListener('input', monthValidation)
     number.addEventListener('input', numberValidation)
+    cvv.addEventListener('input',cvvValiadtion)
 })
 // End of windows event listener function
-cvv.addEventListener('input', () => {
-    let cvvArr = cvv.value.split('')
-    for(var i = 0; cvvArr.length < 3; i++){
-            cvvArr.push(`0`)
-    }
-    cardCvv.innerText = cvvArr.join('')
-})
