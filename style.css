@@ -107,6 +107,7 @@ input:invalid{
 }
 .errormsg{
     color: hsl(0, 100%, 66%);
+    font-size: 12px;
     margin-bottom: 10px;
 }
 @media (min-width:1024px){
@@ -135,6 +136,9 @@ input:invalid{
         position: relative;
         top: 330px;
         left: 170px;
+    }
+    #cardBack p{
+        margin: 69px 0px 0px 210px;
     }
     #numInput p{
         padding-top: 25px;

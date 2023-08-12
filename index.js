@@ -9,7 +9,12 @@ let cardMonth = document.getElementById('cardMonth');
 let cardYear = document.getElementById('cardYear');
 let cardCvv = document.getElementById('cardCvv');
 let form = document.getElementById('form');
-let btn = document.getElementById('btn')
+let btn = document.getElementById('btn');
+let errormsg1 = document.getElementById('errormsg1')
+let errormsg2 = document.getElementById('errormsg2')
+let errormsg3 = document.getElementById('errormsg3')
+let errormsg4 = document.getElementById('errormsg4')
+let errormsg5 = document.getElementById('errormsg5')
 
 // Name Validation function
 const nameValidation = () => {
@@ -19,7 +24,7 @@ const nameValidation = () => {
     if(validName || names.value.length < 1){
         names.style.borderColor = 'hsl(0, 100%, 66%)'
         error = "*Wrong Format Please Enter A Valid Name"
-        btn.setAttribute('disabled')
+        btn.setAttribute('disabled','disabled')
         if(names.value.length < 1){
             cardName.innerText = 'Jane Appleseed'
         }
@@ -29,55 +34,10 @@ const nameValidation = () => {
         cardName.innerText = names.value
         error = null
     }
+    console.log(error)
+    errormsg1.innerText = error
 }
 // End of name validation function
-
-// Year Validation function
-const yearValidation =  () => {
-    let yearArr = year.value.split('')
-    let error = ''
-    for(var i = 0; yearArr.length < 2; i++){
-            yearArr.push('0')
-    }
-    let validatedNumber = yearArr.join('')
-    let valid = validatedNumber.match(/[a-z]/ig)
-    if(valid || year.value.length < 2){
-        btn.setAttribute('disabled','disabled')
-        year.style.borderColor = 'red'
-        error = 'Wrong Format'
-    }else{
-        btn.removeAttribute('disabled')
-        year.style.borderColor = 'hsl(278, 94%, 30%)'
-        error = 'null'
-    }
-    cardYear.innerText = validatedNumber
-}
-// End of Year Validation function
-
-// Month validation begins
-const monthValidation = () => {
-    let monthArr = month.value.split('')
-    for(var i = 0; monthArr.length < 2; i++){
-            monthArr.push('0')
-    }
-    let validMonth = monthArr.join('')
-    let valid = validMonth.match(/[a-z]/ig)
-    console.log(valid)
-    if(valid || month.value.length < 2)
-    {
-        btn.setAttribute('disabled', 'disabled')
-        month.style.borderColor = 'red';
-        let error = '*Wrong Format!';
-        console.log(error)
-    }
-    else{
-        btn.removeAttribute('disabled')
-        month.style.borderColor = "hsl(278, 94%, 30%)"
-        error = null
-    }
-    cardMonth.innerText = validMonth
-}
-// Month Validation ends
 
 // CardNumber validation begins
 
@@ -91,10 +51,14 @@ const numberValidation = () => {
     numArr[14] = ' ';
     let validNumber = numArr.join('')
     let valid = validNumber.match(/[a-z]/ig)
+    let error = ''
     if(valid || number.value.length < 19){
         btn.setAttribute('disabled','disabled')
-        let error = '*Wrong Format!'
+         error = '*Wrong Format Please enter in correct format space inclusive!'
         number.style.borderColor = 'red'
+        if(number.value.length < 1){
+            error = "*Empty Field"
+        }
         
     }else{
         btn.removeAttribute('disabled')
@@ -102,9 +66,69 @@ const numberValidation = () => {
         number.style.borderColor = "hsl(278, 94%, 30%)"
     }
     cardNumber.innerText = validNumber
+    errormsg2.innerText = error
 }
 
 // CardNumber validation ends
+
+
+
+// Month validation begins
+const monthValidation = () => {
+    let monthArr = month.value.split('')
+    for(var i = 0; monthArr.length < 2; i++){
+            monthArr.push('0')
+    }
+    let validMonth = monthArr.join('')
+    let valid = validMonth.match(/[a-z]/ig)
+    let error = ''
+    if(valid || month.value.length < 2)
+    {
+        btn.setAttribute('disabled', 'disabled')
+        month.style.borderColor = 'red';
+        error = '*Wrong Format!';
+        console.log(error)
+        if(month.value.length < 1){
+            error = "*Empty Field"
+        }
+    }
+    else{
+        btn.removeAttribute('disabled')
+        month.style.borderColor = "hsl(278, 94%, 30%)"
+        error = null
+    }
+    cardMonth.innerText = validMonth
+    errormsg3.innerText = error
+}
+// Month Validation ends
+
+// Year Validation function
+const yearValidation =  () => {
+    let yearArr = year.value.split('')
+    let error = ''
+    for(var i = 0; yearArr.length < 2; i++){
+            yearArr.push('0')
+    }
+    let validatedNumber = yearArr.join('')
+    let valid = validatedNumber.match(/[a-z]/ig)
+    if(valid || year.value.length < 2){
+        btn.setAttribute('disabled','disabled')
+        year.style.borderColor = 'red'
+        error = '*Wrong Format!'
+        if(year.value.length < 1){
+            error = "*Empty Field"
+        }
+    }else{
+        btn.removeAttribute('disabled')
+        year.style.borderColor = 'hsl(278, 94%, 30%)'
+        error = null
+    }
+    cardYear.innerText = validatedNumber
+    errormsg4.innerText = error
+}
+// End of Year Validation function
+
+
 
 // Cvv Validation Begins
 
@@ -115,16 +139,21 @@ const cvvValiadtion = () => {
     }
     let validCvv = cvvArr.join('')
     let valid = validCvv.match(/[a-z]/ig)
+    let error = ''
     if(valid || cvv.value.length < 3){
         cvv.style.borderColor = 'red'
-        let error = '*Wrong Format!'
+        error = '*Wrong Format!'
         btn.setAttribute('disabled','disabled')
+        if(cvv.value.length < 1){
+            error = "*Empty Field"
+        }
     }else{
         cvv.style.borderColor = 'hsl(278, 94%, 30%)'
         error = null
         btn.removeAttribute('disabled')
     }
     cardCvv.innerText = validCvv
+    errormsg5.innerText = error
 }
 
 // Cvv Validation ends
