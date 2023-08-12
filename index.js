@@ -17,14 +17,12 @@ const nameValidation = () => {
     let validName = Names.match(/[0-9]/g)
     let error = ''
     if(validName || names.value.length < 1){
-        error = "Wrong Format Please Enter A Valid Name"
+        names.style.borderColor = 'hsl(0, 100%, 66%)'
+        error = "*Wrong Format Please Enter A Valid Name"
+        btn.setAttribute('disabled','disabled')
     }else{
         cardName.innerText = names.value
         error = null
-    }
-    if(error){
-        btn.setAttribute('disabled','disabled')
-    }else{
         btn.removeAttribute('disabled')
     }
 }
@@ -49,7 +47,7 @@ year.addEventListener('input', () => {
         year.style.borderColor = 'red'
         error = 'Wrong Format'
     }else{
-        year.style.borderColor = 'red'
+        year.style.borderColor = 'hsl(278, 94%, 30%)'
         cardYear.innerText = validatedNumber
         error = 'null'
     }
