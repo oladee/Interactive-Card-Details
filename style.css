@@ -9,7 +9,6 @@ main{
     height: 100svh;
 }
 .purplish{
-    height: 40vh;
     background-image: url('./images/bg-main-mobile.png');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -27,6 +26,7 @@ main{
 .cardFront{
     background-image: url('/images/bg-card-front.png');
     position: relative;
+    margin-bottom: 100px;
     bottom: 190px;
     right: 70px;
     padding: 25px 15px 0px 15px;
@@ -52,7 +52,6 @@ main{
     justify-content: space-between;
 }
 .formSection{
-    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
