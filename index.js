@@ -15,6 +15,7 @@ let errormsg2 = document.getElementById('errormsg2')
 let errormsg3 = document.getElementById('errormsg3')
 let errormsg4 = document.getElementById('errormsg4')
 let errormsg5 = document.getElementById('errormsg5')
+let thankYou = document.getElementById('thankYou')
 
 // Name Validation function
 const nameValidation = () => {
@@ -172,4 +173,10 @@ window.addEventListener('load',()=>{
     cvv.addEventListener('input',cvvValiadtion)
     cvv.addEventListener('focusout',cvvValiadtion)
 })
+
 // End of windows event listener function
+form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    form.style.display = 'none'
+    thankYou.style.display = 'flex'
+})
