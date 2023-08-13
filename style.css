@@ -149,12 +149,12 @@ input:invalid{
     }
     .cardFront{
         bottom: 180px;
-        left: 100px;
+        left: 80px;
     }
     #cardBack{
         position: relative;
         top: 330px;
-        left: 170px;
+        left: 130px;
     }
     #cardBack p{
         margin: 69px 0px 0px 210px;
