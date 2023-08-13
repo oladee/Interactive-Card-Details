@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github repo link](https://github.com/oladee/Interactive-Card-Details)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Card Detailing](https://carddetailforom.netlify.app)
 
 ## My process
 
