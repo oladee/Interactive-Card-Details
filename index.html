@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="card Info" />
+    <meta property="og:url" content="carddetailforom.netlify.app" />
+    <meta property="og:title" content="Interactive Card" />
+    <meta
+      property="og:description"
+      content="Users should be able to:
+
+    - Fill in the form and see the card details update in real-time
+    - Receive error messages when the form is submitted if:
+      - Any input field is empty
+      - The card number, expiry date, or CVC fields are in the wrong format"
+    />
+    <meta property="og:image" content="./images/NestHubMax.png" />
+    <meta property="og:site_name" content='Interactive card details'>
     <!-- displays site properly based on user's device -->
 
     <link
@@ -39,7 +53,9 @@
       </section>
       <section class="formSection" id="formSection">
         <div id="thankYou">
-          <div class="img"><img src="./images/icon-complete.svg" alt="icon-complete"></div>
+          <div class="img">
+            <img src="./images/icon-complete.svg" alt="icon-complete" />
+          </div>
           <h3>Thank You!</h3>
           <p>We've added your card details</p>
           <button class="confirm" id="btncontinue">Continue</button>
@@ -114,7 +130,7 @@
               </div>
             </div>
           </div>
-          <button class="confirm" type="submit" id="btn" >Confirm</button>
+          <button class="confirm" type="submit" id="btn">Confirm</button>
         </form>
       </section>
     </main>
